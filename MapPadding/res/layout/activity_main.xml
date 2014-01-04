@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+  <TextView
+    android:id="@+id/message_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
+      android:id="@+id/map"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      class="com.google.android.gms.maps.SupportMapFragment"
+      map:uiZoomControls="false"
+      map:uiCompass="false"/>
+    <LinearLayout
+      android:gravity="bottom|right"
+      android:background="#A000"
+      android:orientation="vertical"
+      android:padding="5dp"
+      android:layout_height="match_parent"
+      android:layout_width="300px">
+      <Button
+        android:id="@+id/no_padding_button"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setNoPadding"
+        android:text="@string/no_padding_button"/>
+      <Button
+        android:id="@+id/add_padding_button"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="setPadding"
+        android:text="@string/add_padding_button"/>
+      <Button
+        android:id="@+id/aus_button"
+        android:padding="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToAUS"
+        android:text="@string/aus_button"/>
+    </LinearLayout>
+  </RelativeLayout>
+</LinearLayout>

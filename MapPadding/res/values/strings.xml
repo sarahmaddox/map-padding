@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="demo_title">Map Padding</string>
+  <string name="aus_button">SYD</string>
+  <string name="no_padding_button">Normal</string>
+  <string name="add_padding_button">Padded</string>
+</resources>
