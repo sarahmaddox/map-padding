@@ -82,7 +82,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void setPadding(View view) {
-        mMap.setPadding(300, 0, 0, 0);
+        mMap.setPadding(0, 0, 300, 0);
     }
 }
 

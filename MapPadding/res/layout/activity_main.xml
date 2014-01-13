@@ -20,6 +20,8 @@
       map:uiCompass="false"/>
     <LinearLayout
       android:gravity="bottom|right"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentTop="true"
       android:background="#A000"
       android:orientation="vertical"
       android:padding="5dp"
