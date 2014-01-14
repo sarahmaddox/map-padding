@@ -8,7 +8,6 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.Window;
@@ -24,7 +23,7 @@ public class MainActivity extends FragmentActivity {
     private GoogleMap mMap;
 
     /** 
-     * Set latitude/longitude of 3 default locations.
+     * Set latitude/longitude of 2 default locations.
      */
     private static final LatLng SOH = new LatLng(-33.85704, 151.21522);
     private static final LatLngBounds AUS = new LatLngBounds(
@@ -35,10 +34,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        getWindow().getDecorView().setSystemUiVisibility(
-            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-            | View.SYSTEM_UI_FLAG_FULLSCREEN);
+        setStickyImmersion();
 
         setContentView(R.layout.activity_main);
         setUpMapIfNeeded();
@@ -47,10 +43,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        getWindow().getDecorView().setSystemUiVisibility(
-            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-            | View.SYSTEM_UI_FLAG_FULLSCREEN);
+        setStickyImmersion();
         setUpMapIfNeeded();
     }
     
@@ -84,6 +77,14 @@ public class MainActivity extends FragmentActivity {
                 mMap.addMarker(new MarkerOptions().position(SOH).title("Sydney Opera House"));
             }
         }
+    }
+
+    // Use sticky immersion to hide the Android UI controls until needed.
+    private void setStickyImmersion() {
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN);
     }
 
     public void goToAUS(View view) {
